@@ -1,7 +1,10 @@
 const express = require ("express");
 const userRouter = require ("./routes/users.route")
+const {globalMiddleware}=require ("./middlewares/globalMiddleware");
 
 const app = express()
+
+app.use(globalMiddleware);
 
 app.get("/",(req,res)=>{
     res.status(2000).send("Welcom to my Server");
